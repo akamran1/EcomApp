@@ -8,7 +8,7 @@ app.use(cors());
 app.use("/ac", ac_module);
 app.use("/vw", vm_module);
 
-let port= process.env.PORT || 8080;
-app.listen(port, ()=>{
+app.set('port', (process.env.PORT || 5000));
+app.listen(app.get('port'), ()=>{
     console.log("server started")
 });

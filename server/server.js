@@ -8,7 +8,7 @@ var app = express();
 app.use(cors());
 app.use("/ac", getac_1["default"]);
 app.use("/vw", getvm_1["default"]);
-var port = process.env.PORT || 8080;
-app.listen(port, function () {
+app.set('port', (process.env.PORT || 5000));
+app.listen(app.get('port'), function () {
     console.log("server started");
 });
